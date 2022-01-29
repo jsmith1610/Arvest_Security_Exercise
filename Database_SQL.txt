@@ -1,11 +1,11 @@
 create TABLE threat(
-    id int,
+    id int AUTO_INCREMENT,
     threat_description char(255) NOT NULL,
     PRIMARY KEY(id)
 );
 
 create TABLE target(
-    id int,
+    id int AUTO_INCREMENT,
     threat_id int,
     description char(255) NOT NULL,
     PRIMARY KEY(id),
@@ -13,7 +13,7 @@ create TABLE target(
 );
 
 create TABLE inject(
-    id int,
+    id int AUTO_INCREMENT,
     threat_id int,
     description char(255) NOT NULL,
     PRIMARY KEY(id),
@@ -21,7 +21,7 @@ create TABLE inject(
 );
 
 create TABLE vulnerability(
-    id int,
+    id int AUTO_INCREMENT,
     threat_id int,
     description char(255) NOT NULL,
     PRIMARY KEY(id),
@@ -29,13 +29,13 @@ create TABLE vulnerability(
 );
 
 create TABLE impact(
-    id int,
+    id int AUTO_INCREMENT,
     description char(255) NOT NULL,
     PRIMARY KEY(id)
 );
 
 create TABLE users(
-    id int,
+    id int AUTO_INCREMENT,
     firstname char(50) NOT NULL,
     lastname char(50) NOT NULL,
     username char(50) NOT NULL,
@@ -45,7 +45,7 @@ create TABLE users(
 );
 
 create TABLE scenarios_generated(
-    id int,
+    id int AUTO_INCREMENT,
     threat_id int NOT NULL,
     target_id int NOT NULL,
     vul_id int NOT NULL,
