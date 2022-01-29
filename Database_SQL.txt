@@ -1,0 +1,72 @@
+create TABLE threat(
+    id int,
+    threat_description char(255) NOT NULL,
+    PRIMARY KEY(id)
+);
+
+create TABLE target(
+    id int,
+    threat_id int,
+    description char(255) NOT NULL,
+    PRIMARY KEY(id),
+    FOREIGN KEY(threat_id) REFERENCES threat(id)
+);
+
+create TABLE inject(
+    id int,
+    threat_id int,
+    description char(255) NOT NULL,
+    PRIMARY KEY(id),
+    FOREIGN KEY(threat_id) REFERENCES threat(id)
+);
+
+create TABLE vulnerability(
+    id int,
+    threat_id int,
+    description char(255) NOT NULL,
+    PRIMARY KEY(id),
+    FOREIGN KEY(threat_id) REFERENCES threat(id)
+);
+
+create TABLE impact(
+    id int,
+    description char(255) NOT NULL,
+    PRIMARY KEY(id)
+);
+
+create TABLE users(
+    id int,
+    firstname char(50) NOT NULL,
+    lastname char(50) NOT NULL,
+    username char(50) NOT NULL,
+    enc_pass char(100) NOT NULL,
+    user_role int,
+    PRIMARY KEY(id)   
+);
+
+create TABLE scenarios_generated(
+    id int,
+    threat_id int NOT NULL,
+    target_id int NOT NULL,
+    vul_id int NOT NULL,
+    impact1_id int NOT NULL,
+    impact2_id int NOT NULL,
+    impact3_id int NOT NULL,
+    impact4_id int NOT NULL,
+    impact5_id int NOT NULL,
+    inject_id int NOT NULL,
+    user_id int NOT NULL,
+    user_rating int,
+    comments char(255) NOT NULL,
+    PRIMARY KEY(id),
+    FOREIGN KEY(threat_id) REFERENCES threat(id),
+    FOREIGN KEY(target_id) REFERENCES target(id),
+    FOREIGN KEY(inject_id) REFERENCES inject(id),
+    FOREIGN KEY(vul_id) REFERENCES vulnerability(id),
+    FOREIGN KEY(impact1_id) REFERENCES impact(id),
+    FOREIGN KEY(impact2_id) REFERENCES impact(id),
+    FOREIGN KEY(impact3_id) REFERENCES impact(id),
+    FOREIGN KEY(impact4_id) REFERENCES impact(id),
+    FOREIGN KEY(impact5_id) REFERENCES impact(id),
+    FOREIGN KEY(user_id) REFERENCES users(id)
+);
