@@ -8,5 +8,8 @@ mydb = mysql.connector.connect(
 )
 mycursor = mydb.cursor()
 mycursor.execute("create TABLE threat(id int AUTO_INCREMENT,threat_description char(255) NOT NULL,PRIMARY KEY(id));")
+mycursor.execute("create TABLE target(id int AUTO_INCREMENT,"+ 
+"threat_id int,description char(255) NOT NULL,PRIMARY KEY(id)," + 
+"FOREIGN KEY(threat_id) REFERENCES threat(id));")
 
 
