@@ -48,13 +48,16 @@ if (isset($_POST['submit']))
     // replace ' ' with '\ ' in the strings so they are treated as single command line args
     $Threat = escapeshellarg($_POST[threat]);
     $description = escapeshellarg($_POST[description]);
-
+    
+    $change_dir = '../python';
     $command = 'python3 add_target.py' . ' '.  $Threat . ' ' . $description;
 
     // remove dangerous characters from command to protect web server
+    $dir_command = escapeshellcmd($change_dir);
     $escaped_command = escapeshellcmd($command);
     //echo "<p>command: $command <p>"; 
     // run add_team.py
+    system($dir_command);
     system($escaped_command);           
 }
 ?>
