@@ -29,7 +29,7 @@ $threats = $statement->fetchAll();
                 <?php endforeach; ?>
             </select>
         </form>
-
+        <br>
         <form action="http://www.csce.uark.edu/~zachapma/ACE/src/home.html">
             <input type="submit" value="Return to Home Page" />
         </form>
