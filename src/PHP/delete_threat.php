@@ -25,6 +25,7 @@ $threats = $statement->fetchAll();
             <select name="threat" style="margin-bottom: 10px">
                 <?php foreach($threats as $threat1): ?>
                     <option value="<?= $threat1['id']; ?>">
+                        <?= $threat1['threat_description']; ?>
                     </option>
                 <?php endforeach; ?>
             </select>
