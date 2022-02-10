@@ -19,21 +19,17 @@ $threats = $statement->fetchAll();
 
 <html>
     <body>
-        <h3>Enter vulnerability Details:</h3>
-        <form action="add_vulnerability.php" method="post" style="margin-bottom: 10px">
+        <h3>Enter Threat Details:</h3>
+        <form action="delete_threat.php" method="post" style="margin-bottom: 10px">
             Threat: 
             <select name="threat" style="margin-bottom: 10px">
                 <?php foreach($threats as $threat1): ?>
                     <option value="<?= $threat1['id']; ?>">
-                        <?= $threat1['threat_description']; ?>
                     </option>
                 <?php endforeach; ?>
             </select>
-            <br>
-            description: <input type="text" name="description" style="margin-bottom: 10px"><br>
-            <input name="submit" type="submit" style="margin-bottom: 20px">
         </form>
-
+        <br>
         <form action="http://www.csce.uark.edu/~zachapma/ACE/src/home.html">
             <input type="submit" value="Return to Home Page" />
         </form>
@@ -47,17 +43,14 @@ if (isset($_POST['submit']))
 {
     // replace ' ' with '\ ' in the strings so they are treated as single command line args
     $Threat = escapeshellarg($_POST[threat]);
-    $description = escapeshellarg($_POST[description]);
     
-    $change_dir = '../python/Add';
-    $command = 'python3 add_vulnerability.py' . ' '.  $Threat . ' ' . $description;
+    //$change_dir = '../python/Delete';
+    $command = 'python3 delete_threat.py' . ' ' .  $Threat;
 
     // remove dangerous characters from command to protect web server
-    $dir_command = escapeshellcmd($change_dir);
+    //$dir_command = escapeshellcmd($change_dir);
     $escaped_command = escapeshellcmd($command);
-
-    // run add_team.py
-    system($dir_command);
+    //system($dir_command);
     system($escaped_command);           
 }
 ?>

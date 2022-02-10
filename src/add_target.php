@@ -49,15 +49,15 @@ if (isset($_POST['submit']))
     $Threat = escapeshellarg($_POST[threat]);
     $description = escapeshellarg($_POST[description]);
     
-    $change_dir = '../python/Add';
+    //$change_dir = '../python';
     $command = 'python3 add_target.py' . ' '.  $Threat . ' ' . $description;
 
     // remove dangerous characters from command to protect web server
-    $dir_command = escapeshellcmd($change_dir);
+    //$dir_command = escapeshellcmd($change_dir);
     $escaped_command = escapeshellcmd($command);
     //echo "<p>command: $command <p>"; 
     // run add_team.py
-    system($dir_command);
+    //system($dir_command);
     system($escaped_command);           
 }
 ?>

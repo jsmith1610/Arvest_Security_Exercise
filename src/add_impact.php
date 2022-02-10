@@ -1,8 +1,8 @@
 <html>
     <body>
-        <h3>Enter Threat details:</h3>
+        <h3>Enter impact details:</h3>
 
-        <form action="add_threat.php" method="post" style="margin-bottom: 10px">
+        <form action="add_impact.php" method="post" style="margin-bottom: 10px">
             description: <input type="text" name="description" style="margin-bottom: 10px"><br>
             <input name="submit" type="submit" style="margin-bottom: 20px">
         </form>
@@ -18,18 +18,19 @@
 <?php
 if (isset($_POST['submit'])) 
 {
+    
     // replace ' ' with '\ ' in the strings so they are treated as single command line args
     $description = escapeshellarg($_POST[description]);
 
-    $change_dir = '../python/Add';
-    $command = 'python3 add_threat.py' . ' '.  $description;
+    //$change_dir = '../python';
+    $command = 'python3 add_impact.py' . ' '.  $description;
 
     // remove dangerous characters from command to protect web server
-    $dir_command = escapeshellcmd($change_dir);
+    //$dir_command = escapeshellcmd($change_dir);
     $escaped_command = escapeshellcmd($command);
-
+    //echo "<p>command: $command <p>"; 
     // run add_team.py
-    system($dir_command);
+    //system($dir_command);
     system($escaped_command);           
 }
 ?>
