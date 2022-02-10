@@ -35,3 +35,107 @@ class DBConnection():
     def close_db(self):  # use this function to close db
         self.cursor.close()
         self.conn.close()
+
+
+class Threat():
+    def __init__(self, id, description):
+        self.ID = id
+        self.description = description
+
+    def getID(self):
+        return self.ID
+
+    def getDesc(self):
+        return self.description
+
+
+class Target():
+    def __init__(self, id, threat, description):
+        self.ID = id
+        self.threat = threat
+        self.description = description
+
+    def getID(self):
+        return self.ID
+
+    def getThreat(self):
+        return self.threat
+
+    def getDesc(self):
+        return self.description
+
+
+class Impact():
+    def __init__(self, id, threat, description):
+        self.ID = id
+        self.threat = threat
+        self.description = description
+
+    def getID(self):
+        return self.ID
+
+    def getThreat(self):
+        return self.threat
+
+    def getDesc(self):
+        return self.description
+
+
+class Inject():
+    def __init__(self, id, description):
+        self.ID = id
+        self.description = description
+
+    def getID(self):
+        return self.ID
+
+    def getDesc(self):
+        return self.description
+
+
+class Vulnerability():
+    def __init__(self, id, threat, description):
+        self.ID = id
+        self.threat = threat
+        self.description = description
+
+    def getID(self):
+        return self.ID
+
+    def getThreat(self):
+        return self.threat
+
+    def getDesc(self):
+        return self.description
+
+
+class Scenario():
+    def __init__(self, id, threat, target, inject, impact, vulnerability, user):
+        self.ID = id
+        self.threat = threat
+        self.target = target
+        self.inject = inject
+        self.impact = impact
+        self.vulnerability = vulnerability
+        self.user = user
+
+    def getID(self):
+        return self.ID
+
+    def getThreat(self):
+        return self.threat
+
+    def getTarget(self):
+        return self.target
+
+    def getInject(self):
+        return self.inject
+
+    def getImpact(self):
+        return self.impact
+
+    def getVulnerability(self):
+        return self.vulnerability
+
+    def getUser(self):
+        return self.user
