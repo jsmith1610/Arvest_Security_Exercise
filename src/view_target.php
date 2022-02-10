@@ -1,9 +1,9 @@
 <html>
     <body>
-        <h3>View impacts:</h3>
+        <h3>View targets:</h3>
 
-        <form method="post">
-            <input type="submit" name="button" value="view impacts"/>
+        <form action="view_target.php" method="get" style="padding-bottom:10px">
+            <input type="submit" name="submit" value="view targets"/>
         </form>
         
 
@@ -16,17 +16,17 @@
 </html>
 
 <?php
-if (isset($_POST['submit'])) 
+if (isset($_GET['submit'])) 
 {
     
-    $change_dir = '../python/View';
-    $command = 'python3 view_impact.py';
+    //$change_dir = '../python';
+    $command = 'python3 view_target.py';
 
     // remove dangerous characters from command to protect web server
-    $dir_command = escapeshellcmd($change_dir);
+    //$dir_command = escapeshellcmd($change_dir);
     $escaped_command = escapeshellcmd($command);
 
-    system($dir_command);
+    //system($dir_command);
     system($escaped_command);           
 }
 ?>
