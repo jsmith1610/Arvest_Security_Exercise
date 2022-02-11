@@ -1,0 +1,31 @@
+body {
+  background-color: #00457C;
+}
+
+h1 {
+	color: white;
+	font-family: veranda;
+}
+
+h3 {
+	color: white;
+	font-family: veranda;
+}
+p {
+	color: white;
+	padding: 5px;
+}
+
+input[type=submit] {
+	background-color: #F20000;
+	border: none;
+	color: white;
+	padding: 15px 30px;
+	text-decoration: none;
+	margin: 4px 2px;
+	cursor: pointer;
+}
+
+input[type=submit]:hover {
+	background-color: D10000;
+}
