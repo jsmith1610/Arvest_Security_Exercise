@@ -4,6 +4,11 @@ from tabulate import tabulate
 
 class DBConnection():
 
+    """   
+    This class was created to connect to/manage the database as a whole. 
+    It allows for displaying/printing, inserting, deleting, updating, and closing of the database.
+    """
+
     def __init__(self, hostname, user_name, mysql_pw, database_name):
         self.conn = mysql.connector.connect(host=hostname, user=user_name, password=mysql_pw, database=database_name)
         self.cursor = self.conn.cursor()
@@ -36,8 +41,13 @@ class DBConnection():
         self.cursor.close()
         self.conn.close()
 
-
 class Threat():
+
+    """
+    This class is for the management of the possible threats in any given security scenario. 
+    It allows for the addition, removal, and viewing of the list of threats within the database.
+    """
+
     def __init__(self, id, description):
         self.ID = id
         self.description = description
@@ -50,6 +60,12 @@ class Threat():
 
 
 class Target():
+
+    """
+    This class is for the management of the possible targets in any given security scenario. 
+    It allows for the addition, removal, and viewing of the list of targets within the database.
+    """
+
     def __init__(self, id, threat, description):
         self.ID = id
         self.threat = threat
@@ -66,6 +82,12 @@ class Target():
 
 
 class Impact():
+
+    """
+    This class is for the management of the possible impacts in any given security scenario. 
+    It allows for the addition, removal, and viewing of the list of impacts within the database.
+    """
+
     def __init__(self, id, threat, description):
         self.ID = id
         self.threat = threat
@@ -82,6 +104,12 @@ class Impact():
 
 
 class Inject():
+
+    """
+    This class is for the management of the possible injects in any given security scenario. 
+    It allows for the addition, removal, and viewing of the list of threats within the database.
+    """
+
     def __init__(self, id, description):
         self.ID = id
         self.description = description
@@ -94,6 +122,12 @@ class Inject():
 
 
 class Vulnerability():
+
+    """
+    This class is for the management of the possible vulnerabilities in any given security scenario. 
+    It allows for the addition, removal, and viewing of the list of vulnerabilities within the database.
+    """
+
     def __init__(self, id, threat, description):
         self.ID = id
         self.threat = threat
@@ -110,6 +144,12 @@ class Vulnerability():
 
 
 class Scenario():
+
+    """
+    This class is for the management of the security scenarios comprised of threats, targets, impacts, injects, and vulnerabilities.
+    Each scenario generated includes one of each of the objects listed above. 
+    """
+
     def __init__(self, id, threat, target, inject, impact, vulnerability, user):
         self.ID = id
         self.threat = threat
