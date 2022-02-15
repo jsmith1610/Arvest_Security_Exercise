@@ -3,9 +3,8 @@ from tabulate import tabulate
 
 
 class DBConnection():
-
-    """   
-    This class was created to connect to/manage the database as a whole. 
+    """
+    This class was created to connect to/manage the database as a whole.
     It allows for displaying/printing, inserting, deleting, updating, and closing of the database.
     """
 
@@ -41,10 +40,10 @@ class DBConnection():
         self.cursor.close()
         self.conn.close()
 
-class Threat():
 
+class Threat():
     """
-    This class is for the management of the possible threats in any given security scenario. 
+    This class is for the management of the possible threats in any given security scenario.
     It allows for the addition, removal, and viewing of the list of threats within the database.
     """
 
@@ -60,9 +59,8 @@ class Threat():
 
 
 class Target():
-
     """
-    This class is for the management of the possible targets in any given security scenario. 
+    This class is for the management of the possible targets in any given security scenario.
     It allows for the addition, removal, and viewing of the list of targets within the database.
     """
 
@@ -82,9 +80,8 @@ class Target():
 
 
 class Impact():
-
     """
-    This class is for the management of the possible impacts in any given security scenario. 
+    This class is for the management of the possible impacts in any given security scenario.
     It allows for the addition, removal, and viewing of the list of impacts within the database.
     """
 
@@ -104,9 +101,8 @@ class Impact():
 
 
 class Inject():
-
     """
-    This class is for the management of the possible injects in any given security scenario. 
+    This class is for the management of the possible injects in any given security scenario.
     It allows for the addition, removal, and viewing of the list of threats within the database.
     """
 
@@ -122,9 +118,8 @@ class Inject():
 
 
 class Vulnerability():
-
     """
-    This class is for the management of the possible vulnerabilities in any given security scenario. 
+    This class is for the management of the possible vulnerabilities in any given security scenario.
     It allows for the addition, removal, and viewing of the list of vulnerabilities within the database.
     """
 
@@ -144,10 +139,9 @@ class Vulnerability():
 
 
 class Scenario():
-
     """
     This class is for the management of the security scenarios comprised of threats, targets, impacts, injects, and vulnerabilities.
-    Each scenario generated includes one of each of the objects listed above. 
+    Each scenario generated includes one of each of the objects listed above.
     """
 
     def __init__(self, id, threat, target, inject, impact, vulnerability, user):
