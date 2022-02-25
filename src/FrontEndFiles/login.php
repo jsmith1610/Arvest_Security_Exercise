@@ -56,8 +56,8 @@
   <label for="password">Password</label>
   <input type="password" placeholder="Enter Password" name="password" required>
   <br><br><br>
-  <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
   <button type="submit" class="button1">Sign In</button>
+  <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
   </form>
   </center>
   <?php
