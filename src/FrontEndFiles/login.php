@@ -41,7 +41,7 @@
 
 <script async src='/cdn-cgi/bm/cv/669835187/api.js'></script><body bgcolor="#00457C">
 <div id="form-style">
-<form action="HomePage_Ver2.html" method="post">
+<!--<form action="HomePage_Ver2.html" method="post">-->
 <?php
   if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $name = $_POST['username'];
