@@ -63,7 +63,7 @@
   <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['username'];
-    if ($name == "Jacob") {
+    if ($name == "Arvest") {
         echo "Valid Username";
     } else {
         echo "Incorrect Username";
