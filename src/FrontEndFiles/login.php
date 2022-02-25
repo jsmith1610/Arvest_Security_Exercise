@@ -42,7 +42,16 @@
 <script async src='/cdn-cgi/bm/cv/669835187/api.js'></script><body bgcolor="#00457C">
 <div id="form-style">
 <form action="HomePage_Ver2.html" method="post">
-
+<?php
+  if ($_SERVER["REQUEST_METHOD"] == "POST"){
+    $name = $_POST['username'];
+    if (($name) == "Jacob") {
+      echo "That is correct";
+  } else {
+      echo "Incorrect Username";
+  }
+  }
+?>
   <center>
   <div class="logo">
     <img src="infosec_logo_OL.png" alt="Arvest" class="logo">
