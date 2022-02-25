@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($name == "Arvest" && $pass == "SecurityPassword") {
         echo "Valid Credentials";
     } else {
-        echo "Incorrect Username";
+        echo "Incorrect Username or Password";
 }
 }
 ?>
