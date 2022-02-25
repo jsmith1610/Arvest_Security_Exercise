@@ -60,17 +60,15 @@
   <button type="submit" class="button1">Sign In</button>
   </form>
   </center>
-
+  <!--<form action="HomePage_Ver2.html" method="post">-->
+  <!--    </form>-->
   <?php
   if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $name = $_POST['username'];
     if (($name) == "Jacob") {
-      <form action="HomePage_Ver2.html" method="post">
-      </form>
+     
       echo "That is correct";
   } else {
-      <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
-      </form>
       echo "Incorrect Username";
   }
   }
