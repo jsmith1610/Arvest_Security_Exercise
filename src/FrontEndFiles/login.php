@@ -65,7 +65,6 @@
     $name = $_POST['username'];
     if (($name) == "Jacob") {
       echo "That is correct";
-      <form action="HomePage_Ver2.html" method="post"></form>
     }else {
       echo "Incorrect Username";
     }
