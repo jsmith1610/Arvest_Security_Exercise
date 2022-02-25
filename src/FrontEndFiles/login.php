@@ -50,6 +50,7 @@
   <br><br>
 
   <center>
+  <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
   <label for="username">Username</label>
   <input type="text" placeholder="Enter Username" name="username" required>
   <br><br>
@@ -57,7 +58,6 @@
   <input type="password" placeholder="Enter Password" name="password" required>
   <br><br><br>
   <button type="submit" class="button1">Sign In</button>
-  <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
   </form>
   </center>
   <?php
@@ -65,9 +65,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['username'];
     if ($name == "Jacob") {
         echo "Valid Username";
-    } else {
-        echo "Incorrect Username";
-    }
+    } # else {
+        //echo "Incorrect Username";
+//}
 }
 ?>
 </div>
