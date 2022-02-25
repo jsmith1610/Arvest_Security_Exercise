@@ -66,10 +66,9 @@
   }
   ?>
 
-  <?if (($name) == "Jacob") {?>
-      <?echo "That is correct";?>
-      <form action="HomePage_Ver2.html" method="post">
-     </form>
+  <?if (($name) == "Jacob") {
+      echo "That is correct";?>
+      <form action="HomePage_Ver2.html" method="post"></form>
     <?}?>
     
    <?else {?>
