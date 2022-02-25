@@ -65,9 +65,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['username'];
     if ($name == "Jacob") {
         echo "Valid Username";
-    } # else {
-        //echo "Incorrect Username";
-//}
+    } else {
+        echo "Incorrect Username";
+}
 }
 ?>
 </div>
