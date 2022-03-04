@@ -4,7 +4,7 @@
 $pdo = new PDO('mysql:host=localhost;dbname=zachapma', 'zachapma', 'Eeja3dae');
 
 //Our select statement. This will retrieve the data that we want.
-$sql = "SELECT * FROM threat";
+$sql = "SELECT * FROM inject";
 
 //Prepare the select statement.
 $statement = $pdo->prepare($sql);
@@ -13,19 +13,19 @@ $statement = $pdo->prepare($sql);
 $statement->execute();
 
 //Retrieve the rows using fetchAll.
-$threats = $statement->fetchAll();
+$injects = $statement->fetchAll();
 
 ?>
 
 <html>
     <body>
-        <h3>Enter Threat Details:</h3>
-        <form action="delete_threat.php" method="post" style="margin-bottom: 10px">
-            Threat: 
-            <select name="threat" style="margin-bottom: 10px">
-                <?php foreach($threats as $threat1): ?>
-                    <option value="<?= $threat1['id']; ?>">
-                        <?= $threat1['threat_description']; ?>
+        <h3>Enter inject Details:</h3>
+        <form action="delete_inject.php" method="post" style="margin-bottom: 10px">
+            inject: 
+            <select name="inject" style="margin-bottom: 10px">
+                <?php foreach($injects as $inject1): ?>
+                    <option value="<?= $inject1['id']; ?>">
+                        <?= $inject1['description']; ?> 
                     </option>
                 <?php endforeach; ?>
             </select>
@@ -43,15 +43,12 @@ $threats = $statement->fetchAll();
 if (isset($_POST['submit'])) 
 {
     // replace ' ' with '\ ' in the strings so they are treated as single command line args
-    $Threat = escapeshellarg($_POST[threat]);
-    
-    $change_dir = '../python/Delete';
-    $command = 'python3 delete_threat.py' . ' ' .  $Threat;
+    $inject = escapeshellarg($_POST[inject]);
+
+    $command = 'python3 delete_inject.py' . ' ' .  $inject;
 
     // remove dangerous characters from command to protect web server
-    $dir_command = escapeshellcmd($change_dir);
     $escaped_command = escapeshellcmd($command);
-    system($dir_command);
     system($escaped_command);           
 }
 ?>

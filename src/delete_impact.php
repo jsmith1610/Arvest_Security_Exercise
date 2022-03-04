@@ -4,7 +4,7 @@
 $pdo = new PDO('mysql:host=localhost;dbname=zachapma', 'zachapma', 'Eeja3dae');
 
 //Our select statement. This will retrieve the data that we want.
-$sql = "SELECT * FROM threat";
+$sql = "SELECT * FROM impact";
 
 //Prepare the select statement.
 $statement = $pdo->prepare($sql);
@@ -13,19 +13,19 @@ $statement = $pdo->prepare($sql);
 $statement->execute();
 
 //Retrieve the rows using fetchAll.
-$threats = $statement->fetchAll();
+$impacts = $statement->fetchAll();
 
 ?>
 
 <html>
     <body>
-        <h3>Enter Threat Details:</h3>
-        <form action="delete_threat.php" method="post" style="margin-bottom: 10px">
-            Threat: 
-            <select name="threat" style="margin-bottom: 10px">
-                <?php foreach($threats as $threat1): ?>
-                    <option value="<?= $threat1['id']; ?>">
-                        <?= $threat1['threat_description']; ?>
+        <h3>Enter Impact Details:</h3>
+        <form action="delete_impact.php" method="post" style="margin-bottom: 10px">
+            impact: 
+            <select name="impact" style="margin-bottom: 10px">
+                <?php foreach($impacts as $impact1): ?>
+                    <option value="<?= $impact1['id']; ?>">
+                        <?= $impact1['description']; ?>
                     </option>
                 <?php endforeach; ?>
             </select>
@@ -43,15 +43,13 @@ $threats = $statement->fetchAll();
 if (isset($_POST['submit'])) 
 {
     // replace ' ' with '\ ' in the strings so they are treated as single command line args
-    $Threat = escapeshellarg($_POST[threat]);
+    $impact = escapeshellarg($_POST[impact]);
     
     $change_dir = '../python/Delete';
-    $command = 'python3 delete_threat.py' . ' ' .  $Threat;
+    $command = 'python3 delete_impact.py' . ' ' .  $impact;
 
     // remove dangerous characters from command to protect web server
-    $dir_command = escapeshellcmd($change_dir);
     $escaped_command = escapeshellcmd($command);
-    system($dir_command);
     system($escaped_command);           
 }
 ?>

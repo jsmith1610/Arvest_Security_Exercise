@@ -34,7 +34,7 @@ $threats = $statement->fetchAll();
             <input name="submit" type="submit" style="margin-bottom: 20px">
         </form>
 
-        <form action="http://www.csce.uark.edu/~zachapma/ACE/src/home.html">
+        <form action="http://www.csce.uark.edu/~zachapma/ACE/src/HomePage_Ver2.html">
             <input type="submit" value="Return to Home Page" />
         </form>
         <br><br>
