@@ -1,13 +1,16 @@
 <html>
-    <body>
+    <head>
+		<link rel="stylesheet" href="styles.css">
+	<script async src='/cdn-cgi/bm/cv/669835187/api.js'></script></head>
+	
+	<body>
         <h3>View threats:</h3>
 
         <form action="view_threat.php" method="get" style="padding-bottom:10px">
             <input type="submit" name="submit" value="view threats"/>
         </form>
         
-
-        <form action="http://www.csce.uark.edu/~zachapma/ACE/src/home.html">
+        <form action="http://www.csce.uark.edu/~zachapma/ACE/src/HomePage_Ver2.html">
             <input type="submit" value="Return to Home Page" />
         </form>
         <br><br>
