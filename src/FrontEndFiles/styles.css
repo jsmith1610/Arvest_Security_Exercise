@@ -1,32 +1,21 @@
 body {
-	background-color: #00457C;
-	width: 100%;
-	height: 100%;
-	margin:0;
-	font-size: 14px;
-	font-family: Verdana;
+  background-color: #00457C;
+  width: 100%;
+  height: 100%;
 }
 
 h1 {
 	color: white;
-}
-
-h2 {
-	color: white;
+	font-family: veranda;
 }
 
 h3 {
 	color: black;
+	font-family: veranda;
 }
-
 p {
 	color: black;
 	padding: 5px;
-}
-
-img{
-    width:300px;
-    height:auto;
 }
 
 .center{
@@ -35,60 +24,23 @@ img{
 	align-items: center;
 }
 
-.whitebox1{
-	background: white;
-	width:400px;
-	height:500px;
-	margin:auto;
-}
-
-.whitebox2{
-	background-color: white;
-	width: 70%;
-	height: 80%;
-	margin:auto;
-}
-
-.whitebox3{
-	background-color: white;
-	width: 60%;
-	height: 550px;
-	margin:auto;
-}
-
-.sign-in-button
-{
-	background-color: #F20000;
-	border: none;
-	color: white;
-	font-family: Verdana;
-	font-weight: bold;
-	padding: 15px 32px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	cursor: pointer;
-}
-
-.sign-in-button:hover {
-	background-color: #D10000;
-}
-
-.btn-group{
+.btn-group button {
 	background-color: #F20000;
 	border: 1px solid red;
-	color: white;
-	font-family: Verdana;
-	font-weight: bold;
-	font-size: 14px;	
+	color: white; 
 	text-decoration: none;
-	margin: 2px 4px;
+	margin: 2px 1px;
 	cursor: pointer;
-	height: 50px;
-	width: 175px;
+	height: 40px;
+	width: 150px;
 }
 
-.btn-group:hover {
+.btn-group button:hover {
 	background-color: #D10000;
 }
 
+.whitebox{
+	background-color: white;
+	height: 90%;
+	width: 90%;
+}
