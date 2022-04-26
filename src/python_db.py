@@ -16,9 +16,6 @@ class DBConnection():
         header = []
         for cd in self.cursor.description:  # get headers
             header.append(cd[0])
-        print('')
-        print('Query Result:')
-        print('')
         return(tabulate(result, headers=header, tablefmt="html"))  # print results in table format
 
     # select and display query
