@@ -38,7 +38,7 @@ img{
 .whitebox1{
 	background: white;
 	width:400px;
-	height:500px;
+	height:600px;
 	margin:auto;
 }
 
@@ -54,6 +54,20 @@ img{
 	width: 60%;
 	height: 550px;
 	margin:auto;
+}
+
+.back-button{
+	background-color: #F20000;
+	border: 1px solid red;
+	color: white;
+	font-family: Verdana;
+	font-weight: bold;
+	font-size: 10px;	
+	text-decoration: none;
+	margin: 2px 4px;
+	cursor: pointer;
+	height: 30px;
+	width: 100px;
 }
 
 .sign-in-button

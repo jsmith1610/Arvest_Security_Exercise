@@ -70,15 +70,10 @@ try:
     query6 = "SELECT description FROM impact;"
     res6 = connection.executeSelect(query6)
     res6 = res6.split('\n')  # split the header and data for printing
-    print("<br/>" + "All Possible Impacts:"  + res6[0] + "<br/>" + res6[1])
+    print("<br/>" + "All Possible Impacts:" + res6[0] + "<br/>" + res6[1])
     for i in range(len(res6) - 2):
-        if(i != 0):
-          print(res6[i + 2])
-    # print(res6[2])           # Displays Names of Database Atributes
-    # random_id = random_element(res6)
-    # print(random_id)         # Displays Random Impact Description
-    # print(res6[len(res6)-1]) # Utilizes Stored Table Format
-    # print("<br/>")
+            if(i != 0):
+              print(res6[i + 2])
     
     connection.close_db()    # close db
 

@@ -1,44 +1,42 @@
-<html>
-    <body>
-        <h3>Home Page</h3>
-        <form action="http://www.csce.uark.edu/~zachapma/ACE/src/add_threat.php">
-            <input type="submit" value="Add Threat" />
-        </form>
-        <form action="http://www.csce.uark.edu/~zachapma/ACE/src/view_threat.php">
-            <input type="submit" value="View Threat" />
-        </form>
+<section class="signup-form">
+    <head>
+		<link rel="stylesheet" href="styles.css">
+	<script async src='/cdn-cgi/bm/cv/669835187/api.js'></script>
+	</head>
+	
+	<body>
+		<br>
+		<div class="center">
+			<h1>Admin Account</h1>
+		</div>
+		
+		<div class="center">
+			<div class = "whitebox3">
+			<br>
+				<div class="center">
+					<form action="signupPage.php" method="post" style="margin-bottom: 10px">
+						<button type="submit" name ="submit" class="btn-group" >Sign up User</button>
+					</form>
 
+					<form action="UpdateUsername.php" method="post" style="margin-bottom: 10px">
+						<button type="submit" name ="submit" class="btn-group" >Update Username</button>
+					</form>
 
-        <form action="http://www.csce.uark.edu/~zachapma/ACE/src/add_target.php">
-            <input type="submit" value="Add Target" />
-        </form>
-        <form action="http://www.csce.uark.edu/~zachapma/ACE/src/view_target.php">
-            <input type="submit" value="View Target" />
-        </form>
-
-
-        <form action="http://www.csce.uark.edu/~zachapma/ACE/src/add_inject.php">
-            <input type="submit" value="Add Inject" />
-        </form>
-        <form action="http://www.csce.uark.edu/~zachapma/ACE/src/view_inject.php">
-            <input type="submit" value="View Inject" />
-        </form>
-
-
-        <form action="http://www.csce.uark.edu/~zachapma/ACE/src/add_vulnerability.php">
-            <input type="submit" value="Add vulnerability" />
-        </form>
-        <form action="http://www.csce.uark.edu/~zachapma/ACE/src/view_vulnerability.php">
-            <input type="submit" value="View vulnerability" />
-        </form>
-
-
-        <form action="http://www.csce.uark.edu/~zachapma/ACE/src/add_impact.php">
-            <input type="submit" value="Add impact" />
-        </form>
-        <form action="http://www.csce.uark.edu/~zachapma/ACE/src/view_impact.php">
-            <input type="submit" value="View impact" />
-        </form>
-
-    </body>
-</html>
+                    <form action="updateRole.php" method="post" style="margin-bottom: 10px">
+						<button type="submit" name ="submit" class="btn-group" >Update user role</button>
+					</form>
+					
+					<form action="scenario_generator.php" method="post" style="margin-bottom: 10px">
+						<button type="submit" name ="submit" class="btn-group" >Scenario creator page</button>
+					</form>
+				</div>	
+				<div style = "position: fixed; left:990px; top:550px;">
+					<form action="login.php" method="post" style="margin-bottom: 10px">
+						<button type="submit" name ="submit" class="btn-group" >Logout</button>
+					</form>
+					<!--<p><a href="http://www.csce.uark.edu/~zachapma/ACE/src/login.php">Logout</a></p><br>-->
+				 </div> 		
+			</div>
+		</div>
+	</body>
+</section>
