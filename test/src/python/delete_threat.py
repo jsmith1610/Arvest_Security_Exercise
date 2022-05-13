@@ -5,7 +5,7 @@ import python_db
 
 
 mysql_username = 'zachapma'  # please change to your username
-mysql_password = 'Eeja3dae'  # please change to your MySQL password
+mysql_password = ' '  # please change to your MySQL password
 
 try:
     python_db.open_database('localhost', mysql_username, mysql_password, mysql_username)  # open database

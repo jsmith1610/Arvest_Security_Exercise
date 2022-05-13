@@ -6,7 +6,7 @@ import random
 from python_db import DBConnection
 
 mysql_username = 'zachapma'  # please change to your username
-mysql_password = 'Eeja3dae'  # please change to your MySQL password
+mysql_password = ' '  # please change to your MySQL password
 
 
 def random_element(arr):

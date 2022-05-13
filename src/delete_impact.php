@@ -1,7 +1,7 @@
 <?php
 
 //Connect to our MySQL database using the PDO extension.
-$pdo = new PDO('mysql:host=localhost;dbname=zachapma', 'zachapma', 'Eeja3dae');
+$pdo = new PDO('mysql:host=localhost;dbname=zachapma', 'zachapma', ' ');
 
 //Our select statement. This will retrieve the data that we want.
 $sql = "SELECT * FROM impact";
