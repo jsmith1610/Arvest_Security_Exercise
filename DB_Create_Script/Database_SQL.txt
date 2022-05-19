@@ -35,12 +35,11 @@ create TABLE impact(
 );
 
 create TABLE users(
-    id int AUTO_INCREMENT,
-    firstname char(50) NOT NULL,
-    lastname char(50) NOT NULL,
+    id int(11) AUTO_INCREMENT,
     username char(50) NOT NULL,
-    enc_pass char(100) NOT NULL,
-    user_role int,
+    enc_pass varchar(255) NULL,
+    usersEmail varchar(255) NOT NULL,
+    userRole varchar(125) NULL,
     PRIMARY KEY(id)   
 );
 
