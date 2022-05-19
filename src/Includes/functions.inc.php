@@ -9,7 +9,8 @@ function empInputSignUp($name, $email, $password, $password_repeat){
     }
     return $result;
 }
-
+#checks for characters that are not allowed 
+#If found returns true so that it can get flagged
 function invalidUsername($name){
     if(!preg_match('/^[a-zA-Z0-9]*$/', $name)) {
         $result = true;
@@ -20,9 +21,10 @@ function invalidUsername($name){
     return $result;
 }
 
+#checks the length of the password and makes sure that it is an appropriate length for security purposes
 function lengthCheck($password){
     $len = strlen($password);
-    if($len < 8){
+    if($len < 12){
         $result = true;
     }
     else{
@@ -31,6 +33,7 @@ function lengthCheck($password){
     return $result;
 }
 
+#checks the characters that are being put of the sign up box so that typical characters of an email are put in
 function invalidEmail($email){
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $result = true;
@@ -41,6 +44,7 @@ function invalidEmail($email){
     return $result;
 }
 
+#When signing up checks the passwords match so they can get into their account from the password they remember putting in
 function passwordMatch($password, $password_repeat){
     if($password !== $password_repeat) {
         $result = true;
@@ -51,18 +55,23 @@ function passwordMatch($password, $password_repeat){
     return $result;
 }
 
+#checks that a username doesnt already exit in the database
 function uidExists($conn, $name, $email){
     $sql = "SELECT * FROM users WHERE username = ? OR usersEmail = ?;"; 
+    #connects to the database based on the credentials
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
         header("location: ../signupPage.php?error=stmtfailed");
         exit();
     }
+
+    #prepares the sql statment with the variables provided then executes 
     mysqli_stmt_bind_param($stmt, "ss", $name, $email);
     mysqli_stmt_execute($stmt);
 
     $resultData = mysqli_stmt_get_result($stmt);
 
+    #fetches the results so that they can be used or used as validation
     if ($row =  mysqli_fetch_assoc($resultData)){
         return $row;
     }
@@ -73,6 +82,7 @@ function uidExists($conn, $name, $email){
     mysqli_stmt_close($stmt);
 }
 
+#the same for the above function but takes into consideration different inputs and purpose
 function uidExistsUpdate($conn, $name){
     if(!filter_var($name, FILTER_VALIDATE_EMAIL)) {
         $sql = "SELECT * FROM users WHERE username = ?;"; 
@@ -100,7 +110,6 @@ function uidExistsUpdate($conn, $name){
     }
     mysqli_stmt_close($stmt);
 }
-
 
 function createUser($conn, $name, $password, $email){
     $sql = "INSERT INTO users (username, enc_pass, UsersEmail) VALUES (?, ?, ?);"; 
@@ -159,6 +168,8 @@ function elevatedUserCheck($conn, $name, $email){
 
 function loginUser($conn, $name, $password){
     $usernameExists = uidExists($conn, $name, $name);
+
+    #used to check the status or role of the user logging in
     $statusCheck = elevatedUserCheck($conn, $name, $name);
     
     if($usernameExists == false){
@@ -174,8 +185,6 @@ function loginUser($conn, $name, $password){
     }
     else if ($checkPassword == true){
     
-        //header("location: ../TestAuthentication/Homepage.php");
-        //header("location: ../login.php?error=none");
         if($statusCheck != false){
             header("location: ../login.php?error=elevatedUser");
             exit();

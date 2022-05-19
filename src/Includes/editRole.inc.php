@@ -6,8 +6,9 @@ if(isset($_POST['submit'])){
     
 
     require_once 'dbhinc.php';
-    require_once 'functions.inc.php';
-    
+    require_once 'functions.inc.php'; #has all the functions for the login and updating users
+
+    #checks the box for an empty input
     if(empInput($item1, $item2) != false){
         header("location: ../updateRole.php?error=emptyinput");
         exit();

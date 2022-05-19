@@ -42,12 +42,10 @@
 					<button type="submit" name="submit" class="sign-in-button">Update</button>
 				</div>
 			</form>
-            <!--<p><a href="http://www.csce.uark.edu/~jts033/TestAuthentication/login.php">Logout</a></p><br>-->
             <div style = "position: fixed; left:700px; top:650px;">
 					<form action="Home.html" method="post" style="margin-bottom: 10px">
 						<button type="submit" name ="submit" class="back-button" >Back to admin</button>
 					</form>
-					<!--<p><a href="http://www.csce.uark.edu/~jts033/TestAuthentication/login.php">Logout</a></p><br>-->
 				 </div>
             <?php
                 if (isset($_GET["error"])){
